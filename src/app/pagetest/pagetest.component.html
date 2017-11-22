@@ -1,0 +1,117 @@
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> -->
+                <a class="navbar-brand" routerLink="">
+                    <img src="assets/static/images/auxy.png" class="img-responsive" width="150px" alt="">
+                </a>
+            </div>
+  
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--<li class="active"><a href="#">Wallet <span class="sr-only">(current)</span></a></li>-->
+                    <!--<li><a href="#">Charts</a></li>-->
+                    <!--<li class="#"><a href="#">Stats</a></li>-->
+                    <!--<li><a href="#">Markets</a></li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- <toaster-container></toaster-container> -->
+  <section id="loginForm" class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3 form_wrap clearfix">
+                <div class="col-sm-12 form_head">
+                    <h3 style="margin-bottom: 0px;" (click)="tirg()">
+                        Please provide the following details and files.<br>
+                    </h3>
+                    <hr>
+                </div>
+                <li *ngFor="let i of items | async" style="display:none;">
+                    <p *ngIf="i.confirmations == 0" style="color:#92d6a7">0 confirmation</p>
+                    <p *ngIf="i.confirmations == 1" style="color:#86d29e">1 confirmation</p>
+                    <p *ngIf="i.confirmations == 2" style="color:#6ba87e">2 confirmation</p>
+                    <p *ngIf="i.confirmations == 3" style="color:#43694f">3 confirmation</p>
+                </li>
+                <div *ngIf="shown == 0">Im showing false</div>
+
+                <div *ngIf="shown == 2">Well i shown</div>
+                <div *ngIf="shown == 1">
+                <div>
+                    <!-- <h5>{{asyncpipe1 | async}}</h5>
+                    <div><code>observable|async</code>: Time: {{ asyncpipe | async }}</div> -->
+                </div>
+                <p *ngFor= "let a of item | async">
+
+                        {{item.confirmations}}
+                    <br>
+                </p>
+                <div class="col-sm-12" *ngIf="progressshow == false">
+                        <progressbar class="progress progress-striped active" animate="true" [max]="150" [value]="progressvalue" type="{{progresstype}}"><i>{{initialCount}} confirmation(s)</i></progressbar>
+                </div>
+                <ul>
+                        <br><br>
+                        <div class="col-sm-12">
+                            <li *ngFor="let i of items | async">
+                                <p *ngIf="i.confirmations == 0" style="color:#92d6a7">0 confirmation</p>
+                                <p *ngIf="i.confirmations == 1" style="color:#86d29e">1 confirmation</p>
+                                <p *ngIf="i.confirmations == 2" style="color:#6ba87e">2 confirmation</p>
+                                <p *ngIf="i.confirmations == 3" style="color:#43694f">3 confirmation</p>
+                            </li>
+                        </div>
+                        <div class="col-sm-12" *ngIf="initialCount != 3">
+                            Please wait while we receive {{initialCount}}/3 confirmation to confirm your payment.
+                        </div>
+                        <div class="col-sm-12" *ngIf="initialCount == 3">
+                            Confirmations have been completed, please wait <img src="assets/img/loading.gif" class="loadingimgdone">
+                        </div>
+                        <div class="col-sm-12 text-center">
+                            <h4 style="color:red" *ngIf="initialCount != 3">{{initialCount}} / 3</h4>
+                            <h4 style="color:green" *ngIf="initialCount == 3">{{initialCount}} / 3</h4>
+                        </div>
+
+                        <br><br><br><br><br><br>
+                    <!-- <li *ngFor="let i of items | async">
+                        
+                        <p (click)="callItem(i)">{{i.from_address+' '+i.confirmations}}</p>
+                        <input type="number" [value]="i.confirmations" (keyup)="changeMade(i)">
+                        <p *ngIf="i.confirmations == 0">0 confirmations</p>
+                        <p *ngIf="i.confirmations == 1">1 confirmations</p>
+                        <p *ngIf="i.confirmations == 2">2 confirmations</p>
+                        <p *ngIf="i.confirmations == 3">3 confirmations</p>
+                    </li> -->
+                </ul>
+                </div>
+                <div class="col-sm-12">
+                    <div class="col-sm-12 text-center" id="password_not_entered" role="alert"
+                    style="display: block">
+                        <span class="text-center text-danger">{{errmsg?errmsg:""}}</span>
+                    </div>
+                    <div class="col-sm-12 text-center" id="password_not_entered" role="alert"
+                    style="display: block">
+                        <span class="text-center text-success">{{sucmsg?sucmsg:""}}</span>
+                    </div>
+                    asdf
+                    <!-- {{msgVal | json}} -->
+                    <li *ngFor="let user of msgVal ">
+                        {{ user.filename }}
+                        <br>
+                        {{ user.filesize }}
+                     </li>
+                </div>
+          </div>
+      </div>
+  </div>
+</section>

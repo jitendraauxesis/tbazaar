@@ -1,0 +1,38 @@
+/* .navbar>.container, .navbar>.container-fluid {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: flex-start;
+}
+nav.navbar {
+    box-shadow: 2px 2px 8px #888888;
+}
+.navbar-header button.navbar-toggle.collapsed {
+    float: right;
+    right: 0;
+    position: absolute;
+} */
+.navbar-brand {
+    padding: 4px 4px;
+}
+nav.navbar {
+    box-shadow: 2px 2px 8px #888888;
+}
+.aclass {
+    width: 200px;
+    height: 100px;
+    z-index: 9999;
+    background-color: blueviolet;
+}
+div.bankmodaldiv {
+    margin: 2px;
+    width: 100%;
+    margin-top: 30%;
+}
+input[type=text], select {
+    width: 100%;
+}

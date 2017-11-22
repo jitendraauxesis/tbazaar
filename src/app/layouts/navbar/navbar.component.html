@@ -1,0 +1,91 @@
+<!--<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light  navbar-fixed-top">
+            <a class="navbar-brand" href="#">
+                    <img src="assets/static/images/auxy.png" class="img-responsive" width="100" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- (click)="showcollapse()"  -->
+            <!-- *ngIf="shown" --
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                <!-- <ul class="navbar-nav mr-auto">
+                    <li class="active">
+                        <a [routerLink]="['/home']" class="nopad"><span class="sidebar-icon"><i class="fa fa-home" aria-hidden="true"></i></span>Dashboard</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/transactions']"  data-scroll=""><span class="sidebar-icon"><i class="fa fa-file-o" aria-hidden="true"></i></span>Transactions</a>
+                    </li>
+                    <li class="active">
+                        <a [routerLink]="['/wallet']"  class="nopad"><span class="sidebar-icon"><i class="fa fa-download" aria-hidden="true"></i></span>Import your wallet</a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/logout']"  data-scroll=""><span class="sidebar-icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout</a>
+                    </li>
+                </ul> -->
+                <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> --
+            </div>
+    </nav>
+</header>-->
+
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> -->
+                <a class="navbar-brand" routerLink="">
+                    <img src="assets/img/tb-logo.png" class="img-responsive tblogo" alt="tokenbazaar">
+                </a>
+                <button class="menubtn" (click)="openNav()"><i class="fa fa-cog  fa-3x fa-fw" aria-hidden="true"></i></button>
+                <!-- fa-spin -->
+            </div>
+  
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--<li class="active"><a href="#">Wallet <span class="sr-only">(current)</span></a></li>-->
+                    <!--<li><a href="#">Charts</a></li>-->
+                    <!--<li class="#"><a href="#">Stats</a></li>-->
+                    <!--<li><a href="#">Markets</a></li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+  </header>
+
+  <div id="mySidenav" class="sidenav"  (click)="closeNav()" #mySidenav>
+    <div class="divlogo">
+        <img src="assets/img/tokenBazar.jpg" class="img-responsive logo">
+    </div>
+    <!-- <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">
+        &nbsp;&times;
+    </a> -->
+    <div class="menulistsidenav">
+        <a [routerLink]="['/home']" class="nopad"><span class="sidebar-icon"><i class="fa fa-home" aria-hidden="true"></i></span>Dashboard</a>
+        
+        <!-- <a [routerLink]="['/transactions']"  data-scroll=""><span class="sidebar-icon"><i class="fa fa-file-o" aria-hidden="true"></i></span>Transactions</a> -->
+        
+        <a (click)="doLogout(template)" class="logoutlink" data-scroll=""><span class="sidebar-icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span>Logout</a>
+    </div>
+    <div class="sidemenufooter">
+        <p>&copy;{{year}}</p>
+    </div>
+  </div>
+  <ng-template #template>
+    <div class="modal-body text-center">
+        <p>Do you want to logout from token bazaar?</p>
+        <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+        <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+    </div>
+ </ng-template>
