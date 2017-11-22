@@ -16,9 +16,9 @@ nav.navbar {
     right: 0;
     position: absolute;
 } */
-.navbar-brand {
+/* .navbar-brand {
     padding: 4px 4px;
-}
+} */
 nav.navbar {
     box-shadow: 2px 2px 8px #888888;
 }
